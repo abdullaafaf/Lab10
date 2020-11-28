@@ -1,5 +1,5 @@
 public class SelectionSort {
-	 private int temp;
+	private int temp;
 
 	/** Creates a new instance of SelectionSort */
     public SelectionSort() {
@@ -12,17 +12,28 @@ public class SelectionSort {
      * outputs:
      * special conditions:
      */
-    public int[] basicSelectionSort(int[] x) {
-        for (int i = 0; i < x.length; ++i) {
-            for (int j= i+1; j < x.length; ++j) {
-                if (x[i] > x[j]) {
-                    temp = x[i];
-                    x[i] = x[j];
-                    temp = x[j];
+    public SelectionSort() {
+    }
+
+     int[] basicSelectionSort(int arr[]) {
+    	int i;
+    	int j;
+    	int min_m;
+        for (i = 0; i < arr.length-1; i++)
+        {
+        	min_m = i;
+            for (j= i+1; j < arr.length; j++) {
+                if (arr[j] < arr[min_m]) {
+                    min_m =j;
+                    int temp;
+                    temp = arr[min_m];
+                    arr[min_m]=arr[i];
+                    arr[i]=temp;
                 }
             } // end of inner for loop
         } // end of outer for loop
-        return x;
+        return arr;
     } // end of basicSelectionSort method
+
 
 }
